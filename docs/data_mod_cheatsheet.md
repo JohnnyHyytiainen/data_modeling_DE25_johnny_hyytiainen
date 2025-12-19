@@ -2,8 +2,11 @@
 
 ## Cardinality Quick Reference
 - 1:1 -> |─────| (exempel: PERSON <--> PASSPORT)
+    - One-to-one
 - 1:N -> |────< (exempel: CUSTOMER <--> RENTAL)
+    - One-to-many
 - N:M -> >────< (exempel: ACTOR <--> FILM, needs junction table)
+    - Many-to-many
 
 ## Entity Identification Checklist
 1. Substantiv i business requirement -> potential entities
