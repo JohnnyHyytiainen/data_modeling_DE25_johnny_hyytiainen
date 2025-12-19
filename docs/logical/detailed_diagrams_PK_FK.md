@@ -1,0 +1,1 @@
+# Här placeras mina mer detaljerade diagram med PK/FK.

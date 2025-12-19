@@ -1,0 +1,1 @@
+# Här placeras alla färdiga ER-diagrammen som matchar SQL
