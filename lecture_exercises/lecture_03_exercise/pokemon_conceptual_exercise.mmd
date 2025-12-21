@@ -1,0 +1,43 @@
+erDiagram
+    %% --- ENTITIES (Innehållet) ---
+    POKEMON {
+        string name
+        int pokedex_nr
+        string base_stats
+        string evolution_stage
+    }
+
+    TRAINER {
+        string name
+        string hometown
+    }
+
+    TYPE {
+        string name
+    }
+
+    BATTLE {
+        date battle_date
+        string location
+        string winner
+    }
+
+    %% --- RELATIONSHIPS (Strecken) ---
+
+    %% 1. Trainer owns Pokemon (One-to-Many)
+    TRAINER ||--|{ POKEMON : owns
+
+    %% 2. Pokemon has Types (Many-to-Many)
+    %% Mermaid ritar kråkfötter i båda ändar snyggt
+    POKEMON }|--|{ TYPE : "has_type"
+
+    %% 3. Battle (Två relationer till Pokemon)
+    %% Attacker: En battle har exakt en attacker, en Pokemon kan attackera i många battles
+    BATTLE }|--|| POKEMON : "attacker"
+    
+    %% Defender: Samma sak här
+    BATTLE }|--|| POKEMON : "defender"
+
+    %% 4. Evolution (Recursive)
+    %% En Pokemon kan utvecklas till en annan (Optional One-to-One)
+    POKEMON |o--o| POKEMON : "evolves_into"
