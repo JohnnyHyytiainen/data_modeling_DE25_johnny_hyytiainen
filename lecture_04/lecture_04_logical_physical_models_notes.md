@@ -30,7 +30,7 @@
 
 ## Physical data model(PDM) example:
 
-![physical data model(PDM) example](/lecture_04/ezecream_physical_data_model.png)
+![physical data model(PDM) example](/lecture_04/ezecream_physical_data_model2.0.png)
 
 
 

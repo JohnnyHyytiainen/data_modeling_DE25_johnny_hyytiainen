@@ -1,22 +1,32 @@
 erDiagram
-    CUSTOMER ||--|{ ORDER : places
-    PRODUCT ||--o{ ORDER : contains
+    CUSTOMER ||--o{ ORDERS : places
+    ORDERS  ||--|{ ORDER_LINE : contains
+    PRODUCT ||--o{ ORDER_LINE : appears_in
 
     CUSTOMER {
         int customer_id PK
-        varchar first_name
-        varchar last_name
+        string first_name
+        string last_name
+        string address
+        string(UNIQUE) email UK
+    }
+
+    ORDERS {
+        int order_id PK
+        int customer_id FK
+        date order_date
     }
 
     PRODUCT {
         int product_id PK
-        varchar name
+        string name
         int price
+        string availability_status
     }
 
-    ORDER {
-        int order_id PK
-        int customer_id FK "Pekar på Customer"
-        int product_id FK "Pekar på Product"
+    ORDER_LINE {
+        int orderline_id PK
+        int order_id FK
+        int product_id FK
         int quantity
     }
