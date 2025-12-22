@@ -1,0 +1,22 @@
+erDiagram
+    CUSTOMER ||--|{ ORDER : places
+    PRODUCT ||--o{ ORDER : contains
+
+    CUSTOMER {
+        int customer_id PK
+        varchar first_name
+        varchar last_name
+    }
+
+    PRODUCT {
+        int product_id PK
+        varchar name
+        int price
+    }
+
+    ORDER {
+        int order_id PK
+        int customer_id FK "Pekar på Customer"
+        int product_id FK "Pekar på Product"
+        int quantity
+    }

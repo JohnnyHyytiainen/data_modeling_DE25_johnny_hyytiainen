@@ -1,0 +1,29 @@
+erDiagram
+    CUSTOMER {
+        int customer_id
+        string first_name
+        string last_name
+        string address
+        string email
+    }
+
+    PRODUCT {
+        int product_id
+        string name
+        int price
+    }
+
+    ORDER {
+        int order_id
+        int customer_id 
+        int product_id
+        int quantity
+    }
+
+    %% Relationer
+    %% En kund lägger en eller flera ordrar (One-to-Many)
+    CUSTOMER ||--|{ ORDER : places
+    
+    %% En produkt kan finnas i noll eller flera ordrar (One-to-Many/Optional)
+    %% Rättade till syntaxen på slutet här till || (One product)
+    PRODUCT ||--o{ ORDER : contains
