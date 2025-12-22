@@ -8,25 +8,25 @@ erDiagram
         string first_name
         string last_name
         string address
-        string(UNIQUE) email UK
+        string email UK
     }
 
     ORDERS {
         int order_id PK
-        int customer_id FK
-        date order_date
+        int(NN) customer_id FK
+        date(NN) order_date
     }
 
     PRODUCT {
-        int product_id PK
+        int(NN) product_id PK
         string name
-        int price
+        int(NN) price
         string availability_status
     }
 
     ORDER_LINE {
         int orderline_id PK
-        int order_id FK
-        int product_id FK
-        int quantity
+        int(NN) order_id FK
+        int(NN) product_id FK
+        int(NN)(CHECK) quantity
     }
