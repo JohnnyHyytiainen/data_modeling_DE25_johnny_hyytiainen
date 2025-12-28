@@ -1,0 +1,14 @@
+erDiagram
+    Member {
+        int membership_id
+        string name
+        varchar contact_info
+    }
+
+    Book {
+        string title
+        string author
+        varchar isbn
+    }
+
+    Member ||--|{ Book : Member_borrows_Book
