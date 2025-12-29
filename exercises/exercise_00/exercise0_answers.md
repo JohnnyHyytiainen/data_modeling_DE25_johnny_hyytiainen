@@ -106,3 +106,43 @@
     - The customer is NOT limited in how much said customer wants to order, if the product is in stock, it can be ordered.
     - Add inventory balance column in Product table to keep track and make it update in real time.
     - Add 'out of stock' warning in the UX.
+
+
+# Question 4. Theoretical questions
+
+- Q4 a): What is a conceptual data model and why is it important?
+  - **Answer a):** 
+    - A Conceptual data model or CDM is important to get a top down(high level) overview over what is needed and to conceptualize the "flow". It is a business focused "blueprint" that shows the key entities like, customer-order-product and their relationships (One-many(1:N), one-one(1:1), many-many(N:M / N:N), many-one.(N:1)). It defines ***WHAT*** data matters without going in to too much technical detail for stakeholders. It is a crucial component for getting stakeholders and the technical part of the team aligned. It simplifies the complexity, it gives a foundation for the DB design, it provides a clear framework for defining terms to ensure data quality and it captures the business rules and aligns the business teams and IT teams to get everyone on the same page.
+
+- Q4 b): Storing age in a database, is that a good or a bad idea and why?
+  - **Answer b):**
+    - You CAN store age in a DB. It is not the best idea to do but you can do it. Here is why it isnt the best idea(read: BAD idea)
+      - Age is volatile, depending on how you messure age it gets outdated fast. Every day that passes means +1 day. Are you supposed to update an ENTIRE database day by day? I don't think so, that would be a nightmare and not cost effective at all.
+      - Storing age in a database violates database normalization. What you **SHOULD** do instead if you want to store the age is store the date of birth since that is STATIC(doesn't change. Think of static ip vs dynamic ip)
+      - Storing age by date of birth(DOB) offers you more flexibility, meaning that you could easily filter/sort by the date of birth > 18 to filter out everyone that is not of age for example.
+
+- Q4 c): What are the three types of data structures, and how do they differ?
+  - **Answer c):**
+
+
+- Q4 d): Give examples of how each data structure is used in real world applications
+  - **Answer d):**
+
+- Q4 e): What is cardinality in data modeling and why is it important?
+  - **Answer e):**
+
+
+
+- Q4 f): What are the three types of data structures and how are they different from each other?
+  - **Answer f):** 
+    - I am assuming that this question asks about CDM, LDM and PDM (Conceptual data model, Logical data model and Physical data model) and NOT Hierarchical, Network and Relational since we are focusing on CDM, LDM and PDM models in this course.  
+
+      - **CDM** Conceptual data model refers to a high level model. Think if a map of the subway system, it is not 1:1 in scale with all the turns, how far out it goes in the city etc. It is as the C says its CONCEPTUAL. It is meant to give everyone viewing it an overview over the system(a birds eye view of the system). It focuses on showing the relationships between the different entities with its most basic attributes to give the overall structure of the data. It steers clear of the more intricate technical details and focuses on the key data requirements and the relationships that connect them.
+
+      - **LDM** Logical data model. This is an evolution of the CDM, more technical and gives you a more comprehensive exploration of the data elements, their attributes and their relationships. A LDM is primarily meant to show the structure of the data in a way that is easily understood and useful for data architects and business analysts. They offer more detail than the conceptual model which wouldn't be that useful for a stakeholder meeting where its more focus on the business aspect of it all and not the technical side of it.
+
+      - **PDM** Physical data model. This is the last step in the evolution chain. CDM -> LDM -> PDM. If CDM is for business and non technical people with the overview, LDM is for the technical people with more details such as (PK, FK, SK, NK, UK, data types, NN values etc) the Physical data model is that and more. I like to think of it like this: LDM's are for humans while PDM's are for machines. The key difference between the physical model vs logical model is that:
+        - The physical model contains more specified information vs the logical model.
+        - The physical model contains primary keys(PK), foreign keys(FK), data types(domain constraints)
+
+
