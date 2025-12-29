@@ -1,0 +1,35 @@
+erDiagram
+    %% Vi tar bort datatyper och ID-referenser
+    CUSTOMER {
+        str name
+        str address
+        str email 
+    }
+
+    ORDER {
+        int order_number
+        datetime order_date
+        %% customer_id och product_id TAS BORT. Strecken gör jobbet.
+    }
+
+    PRODUCT {
+        str product_name
+        int price
+    }
+
+    CATEGORY {
+        str category_name
+    }
+
+    %% RELATIONER
+
+    %% Customer lägger Orders (1:M)
+    CUSTOMER ||--|{ ORDER : places
+
+    %% Order innehåller Products (M:N)
+    %% En order har många produkter, en produkt kan finnas i många ordrar
+    ORDER }|--|{ PRODUCT : contains
+
+    %% Product tillhör Categories (M:N)
+    %% "a product can belong to multiple categories"
+    PRODUCT }|--|{ CATEGORY : belongs_to

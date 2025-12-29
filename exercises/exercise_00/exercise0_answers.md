@@ -76,3 +76,33 @@
     - A student must achieve course points of 300 to graduate.
     - A student cannot graduate while having more than 100 points in courses with failing grade.
     - A professor must continue their reasearch while teaching their specific subject.
+
+
+# Question 3 - Onshop
+- An e-commerce platform Onshop manages customers, orders and products.
+  - A customer can place multiple orders.
+  - Each order contains multiple products.
+  - A product can belong to multiple categories.
+
+- Q3 a): Identify key entities and their attributes (ex, customer_name, order_date)
+  - **Answer a):** 
+    - **Entities**:
+      - Customer, Order, Product and Category.
+    - **Attributes**:
+      - Customer: name, address, email
+      - Order: order_number, order_date
+      - Product: product_name, price
+      - Category: category_name
+
+- Q3 b): Sketch the conceptual ERD (CDM).
+  - **Answer b):**
+  - **Customer ||--|{ Order }|--|{ Product }|--|{ Category**
+  - (Customer 1:N Order M:N Product N:M Category)
+![question 3 CDM](/exercises/exercise_00/exercise_0_question_3_ERD.png)
+
+- Q3 c): Define business rules.
+  - **Answer c):**
+    - Only ONE customer can order one or more products per order number.
+    - The customer is NOT limited in how much said customer wants to order, if the product is in stock, it can be ordered.
+    - Add inventory balance column in Product table to keep track and make it update in real time.
+    - Add 'out of stock' warning in the UX.
