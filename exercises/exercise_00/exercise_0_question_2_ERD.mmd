@@ -1,0 +1,29 @@
+erDiagram
+    Professor {
+        string name
+        varchar employee_id
+        string department
+        
+    }
+
+    Student {
+        string name
+        varchar student_id
+        varchar email
+
+
+    }
+
+    Course {
+        string course_name
+        varchar course_id
+        varchar points
+    }
+
+    %% Relationer
+    
+    %% En professor har MÅNGA kurser, En kurs har EN professor (One-to-Many)
+    Professor ||--|{ Course : teaches
+
+    %% En student har MÅNGA kurser, En kurs har MÅNGA studenter (Many-to-Many)
+    Student }|--|{ Course : enrolls_in
