@@ -142,7 +142,7 @@
 
 
 
-- Q4 f): What are the three types of data structures and how are they different from each other?
+- Q4 f): What are the different steps of data modeling?
   - **Answer f):** 
     - I am assuming that this question asks about CDM, LDM and PDM (Conceptual data model, Logical data model and Physical data model) and NOT Hierarchical, Network and Relational since we are focusing on CDM, LDM and PDM models in this course.  
 
