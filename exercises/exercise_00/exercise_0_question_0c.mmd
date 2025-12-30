@@ -1,14 +1,25 @@
 erDiagram
     Member {
-        int membership_id
-        string name
-        varchar contact_info
+        int member_id
+        string member_name
+        int phone
+    }
+
+    Borrow {
+        int borrow_id
+        datetime borrow_date
+        int member_id
+        int book_id
+
     }
 
     Book {
+        int book_id
         string title
         string author
-        varchar isbn
+        int ISBN_nr
+        int copy_nr
     }
 
-    Member ||--|{ Book : Member_borrows_Book
+    Member ||--o{ Borrow : "Member can borrow"
+    Borrow }o--|{ Book : "A book can be captured in a borrow record"

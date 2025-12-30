@@ -1,21 +1,21 @@
 # Question 0 - Library bookly.
 - **Question: a) Identify the entities and attributes for each entity**
 
-- **Answer: a) Entities = Member, Book**
+- **Answer: a) Entities = Member, Borrow, Book**
     - **Entity: Member**
-    - Attributes: membership_id, name, contact_info
+    - Attributes: member_id, member_name, phone
+    - **Entity: Borrow**
+    - Attributes: borrow_id, borrow_date, member_id, book_id
     - **Entity: Book**
-    - Attributes: title, author, isbn
+    - Attributes: book_id, title, author, ISBN_nr, copy_nr
 
 
 - **Question: b) Determine the relationship between member and books**
-
-- **Answer: b)**
+  - **Answer: b)**
     - A Member BORROWS a Book
 
 - **Question: c) Draw a conceptual ERD using crow foots notation.** 
-
-- **Answer: c)**
+  - **Answer: c)**
 ![Library bookly CDM using crows foot notation](/exercises/exercise_00/exercise_0_question_0_CDM.png)
 
 
