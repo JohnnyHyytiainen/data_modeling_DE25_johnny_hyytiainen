@@ -1,20 +1,20 @@
 erDiagram
     Member {
-        int member_id
+        int member_id PK
         string member_name
         int phone
     }
 
     Borrow {
-        int borrow_id
+        int borrow_id PK
         datetime borrow_date
-        int member_id
-        int book_id
+        int member_id FK
+        int book_id FK
 
     }
 
     Book {
-        int book_id
+        int book_id PK
         string title
         string author
         int ISBN_nr

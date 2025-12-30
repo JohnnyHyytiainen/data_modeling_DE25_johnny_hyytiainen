@@ -12,7 +12,7 @@
 
 - **Question: b) Determine the relationship between member and books**
   - **Answer: b)**
-    - A Member BORROWS a Book
+    - One and only one Member Borrows zero to many Books
 
 - **Question: c) Draw a conceptual ERD using crow foots notation.** 
   - **Answer: c)**
@@ -122,11 +122,20 @@
       - Storing age by date of birth(DOB) offers you more flexibility, meaning that you could easily filter/sort by the date of birth > 18 to filter out everyone that is not of age for example.
 
 - Q4 c): What are the three types of data structures, and how do they differ?
-  - **Answer c):**
-
-
 - Q4 d): Give examples of how each data structure is used in real world applications
-  - **Answer d):**
+  - **Answer c+d):**
+    - There are three main data types. They are: Structured, Semi-structured and unstructured. They are primarily different in their schema(organization, how they are organized.)
+      - **Structured data** has a fixed predefined schema that fits into tables with rows and columns neatly.(Think Relational databases, csv files(SQL tables). Spreadsheets or transaction records. They are easy to search and easy to analyze with tools like SQL. They are more rigid and not as flexible).  
+      Structured data is used everyday by, retail and e-commerce, the finance sector, in the healthcare sector, in the logistics sector to mention a few. Basically you can see it as this, any system that requires precise and organized records with defined fields uses structured data because it maintains its consistency and enables powerful analysis over time.   
+      - **Semi-structured data** is not as organized and rigid as structured data but it still has some organized properties. (Think json, Key:value pairs, or XML files).  
+      Semi-structured data is used daily as well by e-commerce, DevOps, IoT, the healthcare sector to mention a few. Since this data structure is a bit more flexible than structured data it is used in many sectors mentioned above. To name a few with examples: E-commerce uses semi-structured data for product listings using JSON/XML format where different products have varying details(think pants has colors/sizes, or a mouse with its sensor specs etc). Social media, comments from users, their different interactions or their posts are usually stored in JSON format or NoSQL DBs. IoT uses semi-structured data for example sensor readings they as well use JSON files or other types of log files. The healthcare sector uses semi structured data for example patient records that needs to be a bit more flexible as well as structured data.  
+      - **Unstructured data** is none of the other two mentions. The biggest difference here is when you compare to Structured data and unstructured data. Unstructured data lacks any predefined format or schema. This type of data is not a good fit for RDBMs even though the largest category of data is represented in this section and it is growing very fast. Unstructured data is a lot more challenging to store and to analyze, it comes from many sources, think emails, social media content, text documents, transcripts. So basically: Audio, Video, Photos, Text documents.
+
+      - **Special mentions and how they differ:** IoT-data(Internet of Things) should also be mentioned since IoT-data is in all three categories above.
+        - Structured data offers efficiency, accuracy and makes it easy to analyse and of course ease of use and access.  
+        - Semi-structured data offers more flexibility, vs structured data and its easier to scale. It is also easier for humans to read and understand without deeper knowledge in different coding languages. To use a quote I found online "Human-Readable & Machine-Parsable: Offers a balance where humans can understand it (tags, labels) and machines can process it efficiently (JSON, XML)".  
+        - Unstructured data, isn't something im very knowing of unless its using the data in video/audio format as an end user. But from my limited undestanding unstructured data can often provide tons of context, nuances and details that are missed in structured data that is when its analyzed properly. Unstructured data can provide hidden insights in form of patterns, sentiments and connections. It can be collected a lot faster and easier than both structured and semi-structured data and it also easier and cheaper to store since it has more options compared to structured data that is very rigid compared to unstructured.
+
 
 - Q4 e): What is cardinality in data modeling and why is it important?
   - **Answer e):**
