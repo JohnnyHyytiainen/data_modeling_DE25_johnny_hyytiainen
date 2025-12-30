@@ -21,7 +21,7 @@
 
 # Question 1 - Conceptual ERD(CDM) to words.
 - This is an ERD conceptual diagram that a database designer and the business stakeholders agreed upon in a car rental company called Carent.
-![question CDM](/exercises/exercise_00/e0_q1_car_rental.png)
+![question CDM](/exercises/exercise_00/exercise_0_question_1_CDM.png)
 
 - Q1 a): Describe the entities in this conceptual ERD.
   - **Answer: Customer entity, Rental entity and a Car Entity.**
