@@ -139,6 +139,8 @@
 
 - Q4 e): What is cardinality in data modeling and why is it important?
   - **Answer e):**
+    - Cardinality in data modeling is the numerical relationship between rows of one table and rows in another table. It includes many-to-many, one-to-many, one-to-one relationships for example.
+    - Cardinality in data modeling is very important because it defines the rules of relationships between tables. It ensures data integrity, prevents redundancy and it directly impacts the database performance (It helps with indexing and query efficiency).
 
 
 
@@ -154,4 +156,31 @@
         - The physical model contains more specified information vs the logical model.
         - The physical model contains primary keys(PK), foreign keys(FK), data types(domain constraints)
 
+- Q4 g): What factors influence the choice between using an RDBMS and NoSQL?
+  - **Answer g):**
+    - The answer to this question must be structured(Like a Relational database)
+      - First you must look in to 4 key factors which are: **Data structure and schema**, **Scalability**, **Concistency vs Speed (ACID vs BASE)** and finally **Relationship (JOINS)**
 
+    - **Data structure and schema:**
+
+         - RDBMS(SQL) requires a strict schema in advance. The data must be neat and tidy and fit in to tables(rows and columns). This should be used when you know exactly what the data looks like. Example: Inventory, Customer register.
+
+         - NoSQL is schemaless(no requirements for a predefined rigid schema for data). This should be used when the data often changes or is unstructured. Example: Think of social media posts, IoT sensor data that changes fast and frequently. 
+
+    - **Scalability: Does it grow in height(Vertical) or in width(Horizontal)?**
+
+        - RDBMS(SQL, vertical scaling) typically scales vertically. To scale an RDBMS you need a bigger and better computer(server). Think more RAM, faster CPU, it gets expensive and fast and it has limits. If you think that an RDBMS is a skyscraper and there is a physical limit to how tall you can build a skyscraper before it "tips over and comes crashing to the ground".  
+
+        - NoSQL(Horizontal scaling). Horizontal scaling does not build a taller skyscraper, instead it builds another building next to the first. NoSQL is designed to distribute. If you need to scale you just add another server next to the first one.
+
+    - **Concistency vs Speed (ACID vs BASE):**
+        - RDBMS(ACID - Atomicity, Concistency, Isolation and Durability) prioritizes safety. A transaction either goes through 100% or not at all. Example: A bank transfer. The money does not get drawn without getting deposited in to the recieving account.
+
+        - NoSQL(BASE - Basically Available, Soft state, Eventual consistency) prioritizes Speed and Availability. It is okay if the data is not synced to the millisecond. Example: Social media, tt sacrifices immediate consistency for better performance and availability.  
+
+    - **Relationship (JOINS):**  
+        - RDBMS(SQL) is the master of JOINS and designed for complex queries and JOINS across multiple tables and connecting them together with speed and concistency.
+        - NoSQL is better for data that can be stored in isolation or aggregates without complex cross referencing. (Usually combines the data in the same document. Nested JSON instead of spreading it out).
+
+    - **Conclusion for question g):** 
+       - It basically is down to this: Do you perfer order and tidiness?(SQL) or do you perfer speed and availability?(NoSQL).  
