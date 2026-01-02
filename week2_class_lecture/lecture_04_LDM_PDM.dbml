@@ -1,0 +1,35 @@
+Table Book {
+  ISBN_nr TEXT [primary key] // Ändrat till varchar (kan innehålla - eller X)
+  title TEXT(75) [not null]
+  author TEXT(50) [not null]
+}
+
+Table BookCopy {
+  book_id INTEGER [primary key]
+  ISBN_nr TEXT(50) [ref: > Book.ISBN_nr] // Måste matcha PK-datatyp (varchar)
+  copy_nr INTEGER [not null]
+}
+
+Table BorrowItem {
+  borrow_item_id INTEGER [primary key, note: "this is a surrogate key combining borrow_id and book_id"]
+  borrow_id INTEGER [ref: > Borrow.borrow_id] // Item tillhör Borrow
+  item_nr SMALLINT [not null]
+  book_id INTEGER [ref: > BookCopy.book_id] // Item pekar på den specifika kopian
+}
+
+Table Borrow {
+  borrow_id INTEGER [primary key]
+  borrow_date DATETIME [not null]
+  member_id INTEGER [ref: > Member.member_id]
+  // book_id BORTTAGEN - Den infon bor i BorrowItem nu!
+}
+
+Table Member {
+  member_id integer [primary key]
+  first_name VARCHAR(50) [not null]
+  last_name VARCHAR(50) [not null]
+  address VARCHAR(75) [not null]
+  phone VARCHAR(50) [not null] // Ändrat till varchar (för att behålla inledande nolla)
+
+  note: "Business rule: a person can be a member without borrowing a book"
+}
