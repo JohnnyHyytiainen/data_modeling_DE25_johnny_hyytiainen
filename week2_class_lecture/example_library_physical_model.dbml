@@ -1,0 +1,32 @@
+Table Member {
+  member_id INTEGER [primary key] //PK: unique and not null
+  member_name VARCHAR(50) [not null]
+  phone INTEGER [not null]
+
+  note: "Business rule: a person can be a member without borrowing."
+}
+
+Table Borrow {
+  borrow_id INTEGER [primary key]
+  borrow_date DATE [not null]
+  member_id INTEGER [not null, ref: > Member.member_id] //FK: referential integrity
+}
+
+Table BorrowItem {
+  borrow_item_id INTEGER [primary key, note: "this is a surrogate key combining borrow_id and item_nr"]
+  borrow_id INTEGER [not null, ref: > Borrow.borrow_id]
+  item_nr SMALLINT [not null]
+  book_id INTEGER [not null, ref: > BookCopy.book_id]
+}
+
+Table BookCopy {
+  book_id INTEGER [primary key]
+  ISBN_nr TEXT [not null, ref: > Book.ISBN_nr]
+  copy_nr INTEGER [not null]
+}
+
+Table Book {
+  ISBN_nr TEXT [primary key]
+  title TEXT [not null]
+  author TEXT [not null]
+}
