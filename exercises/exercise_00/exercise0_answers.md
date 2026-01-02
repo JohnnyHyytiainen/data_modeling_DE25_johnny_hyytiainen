@@ -146,7 +146,6 @@
 
 - Q4 f): What are the different steps of data modeling?
   - **Answer f):** 
-    - I am assuming that this question asks about CDM, LDM and PDM (Conceptual data model, Logical data model and Physical data model) and NOT Hierarchical, Network and Relational since we are focusing on CDM, LDM and PDM models in this course.  
 
       - **CDM** Conceptual data model refers to a high level model. Think if a map of the subway system, it is not 1:1 in scale with all the turns, how far out it goes in the city etc. It is as the C says its CONCEPTUAL. It is meant to give everyone viewing it an overview over the system(a birds eye view of the system). It focuses on showing the relationships between the different entities with its most basic attributes to give the overall structure of the data. It steers clear of the more intricate technical details and focuses on the key data requirements and the relationships that connect them.
 
@@ -159,7 +158,7 @@
 - Q4 g): What factors influence the choice between using an RDBMS and NoSQL?
   - **Answer g):**
     - The answer to this question must be structured(Like a Relational database)
-      - First you must look in to 4 key factors which are: **Data structure and schema**, **Scalability**, **Concistency vs Speed (ACID vs BASE)** and finally **Relationship (JOINS)**
+      - First you must look in to 4 key factors which are: **Data structure and schema**, **Scalability**, **Consistency vs Speed (ACID vs BASE)** and finally **Relationship (JOINS)**
 
     - **Data structure and schema:**
 
@@ -173,13 +172,13 @@
 
         - NoSQL(Horizontal scaling). Horizontal scaling does not build a taller skyscraper, instead it builds another building next to the first. NoSQL is designed to distribute. If you need to scale you just add another server next to the first one.
 
-    - **Concistency vs Speed (ACID vs BASE):**
-        - RDBMS(ACID - Atomicity, Concistency, Isolation and Durability) prioritizes safety. A transaction either goes through 100% or not at all. Example: A bank transfer. The money does not get drawn without getting deposited in to the recieving account.
+    - **Consistency vs Speed (ACID vs BASE):**
+        - RDBMS(ACID - Atomicity, Consistency, Isolation and Durability) prioritizes safety. A transaction either goes through 100% or not at all. Example: A bank transfer. The money does not get drawn without getting deposited in to the recieving account.
 
         - NoSQL(BASE - Basically Available, Soft state, Eventual consistency) prioritizes Speed and Availability. It is okay if the data is not synced to the millisecond. Example: Social media, tt sacrifices immediate consistency for better performance and availability.  
 
     - **Relationship (JOINS):**  
-        - RDBMS(SQL) is the master of JOINS and designed for complex queries and JOINS across multiple tables and connecting them together with speed and concistency.
+        - RDBMS(SQL) is the master of JOINS and designed for complex queries and JOINS across multiple tables and connecting them together with speed and consistency.
         - NoSQL is better for data that can be stored in isolation or aggregates without complex cross referencing. (Usually combines the data in the same document. Nested JSON instead of spreading it out).
 
     - **Conclusion for question g):** 
