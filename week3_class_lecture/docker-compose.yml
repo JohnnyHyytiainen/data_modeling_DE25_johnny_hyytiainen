@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports: # Port mapping between host machine and container
+      - "${POSTGRES_PORT:-5434}:5432"
+    volumes: # Important to distinguish between volumes and bind mounts
+      - pgdata_week3_class:/var/lib/postgresql
+      - ./sql:/docker-entrypoint-initdb.d:ro
+    healthcheck: # Define a check after the container is up and running
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-postgres} -d $${POSTGRES_DB:-postgres}"]
+      interval: 5s
+      retries: 10
+      timeout: 3s
+
+volumes: # Names volume (That can be seen under the volume section under the GUI(docker.desktop))
+  pgdata_week3_class:
