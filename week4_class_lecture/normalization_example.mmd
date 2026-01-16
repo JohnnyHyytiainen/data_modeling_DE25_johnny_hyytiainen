@@ -1,0 +1,25 @@
+erDiagram
+    STUDENT {
+        int student_id PK "Surrogate"
+        string name
+        string email UK "Natural key candidate"
+        string phone
+    }
+    
+    COURSE {
+        int course_id PK "Surrogate"
+        string course_code UK "Natural key candidate"
+        string course_name
+        decimal credits
+    }
+    
+    ENROLLMENT {
+        int enrollment_id PK "Surrogate"
+        int student_id FK
+        int course_id FK
+        date enrollment_date
+        string grade
+    }
+    
+    STUDENT ||--o{ ENROLLMENT : "enrolls in"
+    COURSE ||--o{ ENROLLMENT : "has"
