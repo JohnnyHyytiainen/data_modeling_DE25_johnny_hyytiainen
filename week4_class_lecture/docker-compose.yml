@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:latest
+    container_name: postgres_yrkco
     restart: unless-stopped
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
@@ -10,7 +11,7 @@ services:
       - "${POSTGRES_PORT:-5435}:5432" # Bytt port från föregående :-5434}:5432 till 5435}:5432
     volumes: # Important to distinguish between volumes and bind mounts
       - pgdata_week4_yrkco_class:/var/lib/postgresql # this is a named volume
-      - ./sql:/docker-entrypoint-initdb.d:ro
+      - ./sql:/sql # bind mount for persisting data 
     healthcheck: # Define a check after the container is up and running
       test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-postgres} -d $${POSTGRES_DB:-postgres}"]
       interval: 5s
