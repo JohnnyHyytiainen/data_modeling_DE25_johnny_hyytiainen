@@ -2,5 +2,6 @@
     "workbench.editor.autoLockGroups": {
         "mainThreadWebview-markdown.preview": true
     },
-    "dbmlERDPreviewer.preferredTheme": "dark"
+    "dbmlERDPreviewer.preferredTheme": "dark",
+    "python-envs.pythonProjects": []
 }
