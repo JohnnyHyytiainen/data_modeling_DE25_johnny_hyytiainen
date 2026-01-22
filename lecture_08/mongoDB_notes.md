@@ -34,8 +34,7 @@ db.students.insertOne({ name: "Johnny", age: 32, role: "Data Engineer" })
 ```javascript
 db.students.insertMany([
     { name: "Sara", age: 25 },
-    { name: "Nils", age: 28, skills: ["Python", "SQL"] } // Notera arrayen!
-])
+    { name: "Nils", age: 28, skills: ["Python", "SQL"] } ]) <--- // Notera arrayen!
 
 ```
 
