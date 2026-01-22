@@ -16,7 +16,7 @@ docker ps
 
 ```
 
-*(Du ska se `mongodb_lecture_08` och `mongo-express`)*
+*(Du ska se `mongodb_lecture_08`(eller vad du döpt din container till) och `mongo-express`)*
 
 ---
 
@@ -85,11 +85,3 @@ docker compose -f docker/docker-compose.yml --env-file docker/.env down -v
 docker compose -f docker/docker-compose.yml --env-file docker/.env up -d
 
 ```
-
----
-
-### Snabba tips för lektionen:
-
-* **Kopiera/Klistra:** I terminalen, markera text för att kopiera, högerklicka för att klistra in (oftast).
-* **Pil upp:** Använd pil upp i `mongosh` för att slippa skriva om långa queries.
-* **Tab:** Tab-completion funkar även inne i Mongo!
