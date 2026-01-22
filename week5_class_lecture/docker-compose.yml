@@ -9,7 +9,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - mongo_data_week5:/data/db
+      - mongo_data:/data/db
   mongo-express:
     image: mongo-express:latest
     restart: always
@@ -24,4 +24,4 @@ services:
       ME_CONFIG_MONGODB_SERVER: mongodb
       ME_CONFIG_MONGODB_AUTH_DATABASE: admin
 volumes:
-  mongo_data_week5:
+  mongo_data:
